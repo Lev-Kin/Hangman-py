@@ -9,4 +9,5 @@ summary: <p>Hangman is a popular yet grim puzzle game. A cruel computer hides a 
 programming_language: Python
 content:
 - Hangman
+- Topics
 mode: Study
