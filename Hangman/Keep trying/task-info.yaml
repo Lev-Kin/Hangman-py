@@ -428,5 +428,8 @@ files:
         HangmanTest('hangman.hangman').run_tests()
   learner_created: false
 feedback_link: https://hyperskill.org/learn/step/6086#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Wed, 26 Oct 2022 08:57:30 UTC
 record: -1
