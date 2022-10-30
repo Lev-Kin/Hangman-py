@@ -1,38 +1,43 @@
 import random
+from string import ascii_lowercase
 
-words = ['python', 'java', 'swift', 'javascript']
-hidden = random.choice(words)
-correct_word = ''
-all_letters = ''
-tries = 0
+word = random.choice(['python', 'java', 'swift', 'javascript'])
+s = set()
+w = set()
+tries = 8
 
 print("H A N G M A N")
-while tries < 8:
-    result = ''
-    for l in hidden:
-        if l in correct_word:
-            result += l
+while tries > 0:
+    print()
+    for k in word:
+        if k in s:
+            print(k, end='')
         else:
-            result += '-'
+            print('-', end='')
 
     print()
-    print('{}'.format(result))
-    if set(hidden) == set(correct_word):
-        print('You guessed the word!\nYou survived!')
-        break
-    while True:
-        user_letter = input('Input a letter: ')
-        all_letters += user_letter
-        break
-    if user_letter not in hidden:
-        tries += 1
-        print("That letter doesn't appear in the word")
-    elif user_letter in correct_word:
-        tries += 1
-        print('No improvements')
+    print('Input a letter: ', end='')
+    n = input()
+    if n not in word and n not in w and n in ascii_lowercase:
+        print("That letter doesn't appear in the word.")
+        tries -= 1
+        w.add(n)
+    elif n in w:
+        print("You've already guessed this letter.")
+        tries -= 0
+    elif n in s:
+        print("You've already guessed this letter.")
+        tries -= 0
+    elif len(n) > 1 or n == '':
+        print('Please, input a single letter.')
+        tries -= 0
+    elif n not in ascii_lowercase:
+        print('Please, enter a lowercase letter from the English alphabet.')
+        tries -= 0
     else:
-        correct_word += user_letter
-
-if tries == 8:
+        s.add(n)
+        if set(word) == s:
+            print('You guessed the word ' + word + '!\nYou survived!')
+            break
+else:
     print('You lost!')
-    exit()
