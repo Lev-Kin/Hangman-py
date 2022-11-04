@@ -11,3 +11,6 @@ content:
 - Nested lists
 - Multi-line programs
 - Else statement
+- List comprehension
+- Split and join
+- Loop control statements

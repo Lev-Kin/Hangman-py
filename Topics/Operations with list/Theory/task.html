@@ -1,5 +1,5 @@
 <h2>Operations with list</h2>
-<html><body><p>You already know how to create lists (even empty ones), so, no wonder, that you may want to change your lists somehow. There are lots of things to do with a list, you can read about them in the <a href="https://docs.python.org/3/tutorial/datastructures.html" rel="noopener noreferrer nofollow" target="_blank">Python Data Structures documentation</a>. In this topic, we will discuss only the basic operations.</p>
+<p>You already know how to create lists (even empty ones), so, no wonder, that you may want to change your lists somehow. There are lots of things to do with a list, you can read about them in the <a href="https://docs.python.org/3/tutorial/datastructures.html" rel="noopener noreferrer nofollow" target="_blank">Python Data Structures documentation</a>. In this topic, we will discuss only the basic operations.</p>
 <h5 id="adding-one-element" style="text-align: center;">Adding one element</h5>
 <p>The list is a <strong>dynamic collection</strong>, which means you can add and remove elements. To take a closer look, let's create an empty list of dragons.</p>
 <pre><code class="language-python">dragons = []  # we do not have dragons yet</code></pre>
@@ -22,8 +22,14 @@ print(numbers)  # [1, 2, 3, 4, 5, [10, 20, 30]]</code></pre>
 <p>Alternatively, to merge two lists, you can just add one to another:</p>
 <pre><code class="language-python">numbers_to_four = [0, 1, 2, 3, 4]
 numbers_from_five = [5, 6, 7, 8, 9]
+numbers_from_ten = [10, 11, 12, 13, 14]
+
 numbers = numbers_to_four + numbers_from_five 
-print(numbers)  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</code></pre>
+print(numbers)  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+numbers += numbers_from_ten
+print(numbers)  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+</code></pre>
 <p>If you need a list with repeating elements, you can create a list with the repeating pattern, and then just multiply it by any number. This is particularly useful when you want to create a list of a specific length with the same value:</p>
 <pre><code class="language-python">pattern = ['a', 'b', 'c']
 patterns = pattern * 3
@@ -85,7 +91,9 @@ print(grades.index(10))  # 0</code></pre>
 
 # if we don't specify the end of the interval, it automatically equals the end of the list
 print(grades.index(10, 1))    # 5</code></pre>
-<p></p><div class="alert alert-primary">Be careful — the <code class="language-python">end</code> index is not included in the interval.</div><p></p>
+<p> </p>
+<p></p><div class="alert alert-primary">Be careful — the <code class="language-python">end</code> index is not included in the interval.</div>
+<p> </p>
 <p>It is also good to know that if the element we are looking for is not in the list, the method will cause an <strong>error</strong>:</p>
 <pre><code class="language-python">print(grades.index(8))  # ValueError: 8 is not in list</code></pre>
 <p>Our discussion of the basic operations with lists has come to its end. If you need more information, check out the <a href="http://docs.python.org/3/tutorial/datastructures.html" rel="noopener noreferrer nofollow" target="_blank">Python Data Structures documentation</a>.</p>
@@ -100,4 +108,4 @@ print(grades.index(10, 1))    # 5</code></pre>
 <li>count how many times an element occurs in a list with <code class="language-python">count()</code>;</li>
 <li>get the position of an element in a list with <code class="language-python">index()</code>.</li>
 </ul>
-<p>We also know now that since the list is a dynamic collection, it can be changed. There is no need to constantly create new lists,  which benefits the memory and performance of your program.</p></body></html>
+<p>We also know now that since the list is a dynamic collection, it can be changed. There is no need to constantly create new lists,  which benefits the memory and performance of your program.</p>
